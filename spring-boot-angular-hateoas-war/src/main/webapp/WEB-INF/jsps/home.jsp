@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+	<title>Spring Boot HATEOAS - POST-GET AJAX Example</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	<script src="/js/get.js"></script>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container" ng-app="app">
+		<h1>AngularJS - consume HATEOAS</h1>      
+
+		<div ng-controller="getcontroller">
+			<input type="text" class="form-control" style="width:100px;" ng-model="customerId"/>
+	        <br/>
+			<button id="btn-id" ng-click="getfunction()">Get Customer</button>
+
+			<p>{{getResultMessage}}</p>
+
+			<div id="getCustomerResultDiv" ng-show="showCustomer">
+				<h2>Customer Information</h2>
+				Id: {{customer.data.customerId}}<br/>
+				Name: {{customer.data.name}}<br/>
+				Links:
+				<ul>
+					<li ng-repeat="link in customer.data.links">
+						{{link.rel + ": " + link.href}}
+					</li>
+				</ul>
+			</div>
+
+		    <div id="getOrderResultDiv" ng-show="showOrder">
+		    	<h2>Order Information</h2>
+		    	<ul class="list-group col-md-4">
+		    		<li ng-repeat="order in orders.data"><h4 class="list-group-item">
+		    			<strong>Order {{$index}}</strong><br/> 
+						Id: {{order.id}}<br/>
+						Name: {{order.name}}
+					</h4></li>
+		    	</ul>
+		    </div>
+		</div>
+
+	</div>
+</body>
+</html>

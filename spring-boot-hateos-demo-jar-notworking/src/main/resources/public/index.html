@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Spring Boot HATEOAS - POST-GET AJAX Example</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script	src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/post.js"></script>
+	<script src="js/get.js"></script>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<h1>POST/GET AJAX - HATEOAS</h1>      
+	    <div id="postdiv" class="row">
+	        <form id="orderForm" class="col-md-6">
+	            <label>Customer ID</label>
+	            <input type="text" id="customerid" class="form-control"/>
+	            <br/>
+	            <label>Order</label>
+	            <input type="text" id="order" class="form-control"/>
+	            <br/>
+	            <button type="submit" id="postBtn" class="btn btn-primary">Submit</button>
+	        </form>
+	    </div>
+	    <br/>
+	    <div id="postResultDiv" class="row">
+	    </div>
+	    <br/>
+	    <div id="getdiv" class="row">
+	        <label>Customer ID</label>
+	        <input type="text" id="customerid_get" class="form-control" style="width:100px;"/>
+	        <br/>
+	        <button id="getBtn">Get Customer</button>
+	    </div>
+	    <br/>
+	    <div id="getResultDiv" class="row">
+	    </div>
+
+	</div>
+</body>
+</html>
